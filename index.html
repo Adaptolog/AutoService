@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFEKT AUTO & SERVIS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="loading-screen" class="loading-screen"></div>
+
+    <header>
+        <div class="logo">PERFEKT <span>AUTO</span></div>
+        <nav class="nav-links">
+            <a href="#hero" data-key="nav_home">Головна</a>
+            <a href="#info" data-key="nav_info">Інфо</a>
+        </nav>
+        <div class="lang-switcher">
+            <button onclick="setLang('cs')" id="btn-cs">CS</button>
+            <button onclick="setLang('uk')" id="btn-uk" class="active">UK</button>
+            <button onclick="setLang('en')" id="btn-en">EN</button>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>PERFEKT AUTO</h1>
+            <p data-key="hero_sub">SERVIS • PNEU</p>
+        </div>
+    </section>
+
+    <div id="info" class="info-container">
+        
+        <div class="info-left">
+            <div class="info-col">
+                <h2 data-key="nav_services">Послуги</h2>
+                <div class="item">
+                    <strong data-key="serv_1_title">Автомобілі</strong>
+                    <span data-key="serv_1_desc">Повний сервіс та ремонт</span>
+                </div>
+                <div class="item">
+                    <strong data-key="serv_2_title">Фургони</strong>
+                    <span data-key="serv_2_desc">До вантажопідйомності 5.5т</span>
+                </div>
+                <div class="item">
+                    <strong data-key="serv_3_title">Причепи</strong>
+                    <span data-key="serv_3_desc">Ремонт та сервіс влеків</span>
+                </div>
+            </div>
+
+            <div class="info-col" style="background: #0f0f0f;">
+                <h2 data-key="nav_hours">Графік</h2>
+                <div class="item">
+                    <p>Po - Pa</p>
+                    <p class="highlight">9:00 - 19:00</p>
+                </div>
+                <div class="item">
+                    <p>So</p>
+                    <p class="highlight">9:00 - 13:00</p>
+                </div>
+                <p style="font-style: italic; color: #555; font-size: 0.85rem;" data-key="hours_note">
+                    Поза робочим часом за тел. домовленістю.
+                </p>
+            </div>
+
+            <div class="info-col">
+                <h2 data-key="nav_contact">Контакти</h2>
+                <a href="tel:+420725311160" class="tel-link">725 311 160</a>
+                <a href="tel:+420727870160" class="tel-link">727 870 160</a>
+                <div class="item" style="margin-top: 20px;">
+                    <p>perfektautoservis@seznam.cz</p>
+                    <p style="color: var(--text-gray); margin-top: 10px;">
+                        Zbuzany 1062,<br>Rychnov nad Kněžnou
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-right">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.0909529614664!2d16.273932999999985!3d50.15433220000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ddf9792c73155%3A0x359096442a95df8b!2sPERFEKT%20AUTO%20%26%20SERVIS%20%26%20PNEU!5e0!3m2!1sen!2scz!4v1775218869286!5m2!1sen!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
