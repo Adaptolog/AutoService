@@ -12,8 +12,16 @@
 
     <header>
         <div class="logo">PERFEKT <span>AUTO</span></div>
-        <nav class="nav-links">
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-links" id="siteNav">
             <a href="#hero" data-key="nav_home">Головна</a>
+            <a href="#about" data-key="nav_about">Про нас</a>
+            <a href="#why-us" data-key="nav_why">Чому ми</a>
+            <a href="#reviews" data-key="nav_reviews">Відгуки</a>
             <a href="#info" data-key="nav_info">Інфо</a>
         </nav>
         <div class="lang-switcher">
@@ -23,68 +31,279 @@
         </div>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="hero-bg" id="heroBg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>PERFEKT AUTO</h1>
-            <p data-key="hero_sub">SERVIS • PNEU</p>
-        </div>
-    </section>
-
-    <div id="info" class="info-container">
-        
-        <div class="info-left">
-            <div class="info-col">
-                <h2 data-key="nav_services">Послуги</h2>
-                <div class="item">
-                    <strong data-key="serv_1_title">Автомобілі</strong>
-                    <span data-key="serv_1_desc">Повний сервіс та ремонт</span>
-                </div>
-                <div class="item">
-                    <strong data-key="serv_2_title">Фургони</strong>
-                    <span data-key="serv_2_desc">До вантажопідйомності 5.5т</span>
-                </div>
-                <div class="item">
-                    <strong data-key="serv_3_title">Причепи</strong>
-                    <span data-key="serv_3_desc">Ремонт та сервіс влеків</span>
-                </div>
+    <main class="page-scroller" id="pageScroller">
+        <section id="hero" class="hero">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>PERFEKT AUTO</h1>
+                <p data-key="hero_sub">SERVIS • PNEU</p>
             </div>
+        </section>
 
-            <div class="info-col" style="background: #0f0f0f;">
-                <h2 data-key="nav_hours">Графік</h2>
-                <div class="item">
-                    <p>Po - Pa</p>
-                    <p class="highlight">9:00 - 19:00</p>
+        <section id="about" class="content-section">
+            <div class="container section-shell reveal">
+                <div class="section-intro">
+                    <p class="section-kicker" data-key="about_kicker">Досвід. Точність. Довіра.</p>
+                    <h2 data-key="about_title">Про нас</h2>
                 </div>
-                <div class="item">
-                    <p>So</p>
-                    <p class="highlight">9:00 - 13:00</p>
-                </div>
-                <p style="font-style: italic; color: #555; font-size: 0.85rem;" data-key="hours_note">
-                    Поза робочим часом за тел. домовленістю.
-                </p>
-            </div>
-
-            <div class="info-col">
-                <h2 data-key="nav_contact">Контакти</h2>
-                <a href="tel:+420725311160" class="tel-link">725 311 160</a>
-                <a href="tel:+420727870160" class="tel-link">727 870 160</a>
-                <div class="item" style="margin-top: 20px;">
-                    <p>perfektautoservis@seznam.cz</p>
-                    <p style="color: var(--text-gray); margin-top: 10px;">
-                        Zbuzany 1062,<br>Rychnov nad Kněžnou
+                <div class="about-layout">
+                    <p class="section-lead" data-key="about_desc">
+                        PERFEKT AUTO — це сучасний автосервіс із багаторічним досвідом. Ми спеціалізуємося на комплексному ремонті та обслуговуванні легкових автомобілів, фургонів та причепів. Наша мета — забезпечити вашу безпеку на дорозі завдяки бездоганній якості виконаних робіт.
                     </p>
+                    <div class="about-highlights">
+                        <div class="stat-card reveal-item" style="--delay: 0s;">
+                            <strong data-count="10" data-suffix="+">10+</strong>
+                            <span data-key="about_stat_1">років практичного досвіду</span>
+                        </div>
+                        <div class="stat-card reveal-item" style="--delay: 0.08s;">
+                            <strong data-count="6">6</strong>
+                            <span data-key="about_stat_2">днів на тиждень для сервісу</span>
+                        </div>
+                        <div class="stat-card reveal-item" style="--delay: 0.16s;">
+                            <strong data-count="100" data-suffix="%">100%</strong>
+                            <span data-key="about_stat_3">уваги до безпеки та деталей</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="info-right">
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.0909529614664!2d16.273932999999985!3d50.15433220000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ddf9792c73155%3A0x359096442a95df8b!2sPERFEKT%20AUTO%20%26%20SERVIS%20%26%20PNEU!5e0!3m2!1sen!2scz!4v1775218869286!5m2!1sen!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <section id="why-us" class="content-section dark-section">
+            <div class="container section-shell reveal">
+                <div class="section-intro">
+                    <p class="section-kicker" data-key="why_kicker">Сервіс без компромісів</p>
+                    <h2 data-key="why_title">Чому варто обрати нас</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card reveal-item" style="--delay: 0s;">
+                        <span class="card-index">01</span>
+                        <h3 data-key="why_1_title">Професійна команда</h3>
+                        <p data-key="why_1_desc">Наші майстри мають багаторічний досвід та регулярно підвищують кваліфікацію.</p>
+                    </div>
+                    <div class="card reveal-item" style="--delay: 0.08s;">
+                        <span class="card-index">02</span>
+                        <h3 data-key="why_2_title">Сучасне обладнання</h3>
+                        <p data-key="why_2_desc">Використовуємо лише передові інструменти та технології для діагностики і ремонту.</p>
+                    </div>
+                    <div class="card reveal-item" style="--delay: 0.16s;">
+                        <span class="card-index">03</span>
+                        <h3 data-key="why_3_title">Прозорі ціни</h3>
+                        <p data-key="why_3_desc">Жодних прихованих платежів. Ви завжди знаєте вартість ремонту заздалегідь.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section id="reviews" class="content-section">
+            <div class="container section-shell reveal">
+                <div class="section-intro">
+                    <p class="section-kicker" data-key="reviews_kicker">Довіра, підтверджена відгуками</p>
+                    <h2 data-key="reviews_title">Що кажуть наші клієнти</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="review-card reveal-item" style="--delay: 0s;">
+                        <p data-key="review_1_text">"Швидко, якісно і за адекватні гроші. Робили ремонт ходової на фургоні — все супер, машина як нова!"</p>
+                        <strong data-key="review_1_author">- Олександр</strong>
+                    </div>
+                    <div class="review-card reveal-item" style="--delay: 0.08s;">
+                        <p data-key="review_2_text">"Дуже зручно, що працюють у суботу. Зробили шиномонтаж швидко та без черг. Рекомендую!"</p>
+                        <strong data-key="review_2_author">- Марія</strong>
+                    </div>
+                    <div class="review-card reveal-item" style="--delay: 0.16s;">
+                        <p data-key="review_3_text">"Привітний персонал та професійний підхід. Знайшли проблему, яку в іншому сервісі не могли діагностувати."</p>
+                        <strong data-key="review_3_author">- Петро</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="info" class="content-section dark-section">
+            <div class="container section-shell reveal">
+                <div class="section-intro">
+                    <p class="section-kicker" data-key="info_kicker">Усе потрібне в одному місці</p>
+                    <h2 data-key="nav_info">Інфо</h2>
+                </div>
+                <div class="info-layout">
+                    <div class="info-stack">
+                        <div class="info-panel reveal-item" style="--delay: 0s;">
+                            <h3 data-key="nav_services">Послуги</h3>
+                            <div class="item">
+                                <strong data-key="serv_1_title">Автомобілі</strong>
+                                <span data-key="serv_1_desc">Повний сервіс та ремонт</span>
+                            </div>
+                            <div class="item">
+                                <strong data-key="serv_2_title">Фургони</strong>
+                                <span data-key="serv_2_desc">До вантажопідйомності 5.5т</span>
+                            </div>
+                            <div class="item">
+                                <strong data-key="serv_3_title">Причепи</strong>
+                                <span data-key="serv_3_desc">Ремонт та сервіс влеків</span>
+                            </div>
+                        </div>
+
+                        <div class="info-panel reveal-item" style="--delay: 0.08s;">
+                            <h3 data-key="nav_hours">Графік</h3>
+                            <div class="item info-row">
+                                <p>Po - Pa</p>
+                                <p class="highlight">9:00 - 19:00</p>
+                            </div>
+                            <div class="item info-row">
+                                <p>So</p>
+                                <p class="highlight">9:00 - 13:00</p>
+                            </div>
+                            <p class="hours-caption" data-key="hours_note">
+                                Поза робочим часом за тел. домовленістю.
+                            </p>
+                        </div>
+
+                        <div class="info-panel info-panel-contact reveal-item" style="--delay: 0.16s;">
+                            <h3 data-key="nav_contact">Контакти</h3>
+                            <div class="contact-links">
+                                <a href="tel:+420725311160" class="info-link tel-link">
+                                    <span class="link-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.08.36 2.24.54 3.42.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.06 21 3 13.94 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.18.18 2.34.54 3.42a1 1 0 0 1-.24 1z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>725 311 160</span>
+                                </a>
+                                <a href="tel:+420727870160" class="info-link tel-link">
+                                    <span class="link-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.08.36 2.24.54 3.42.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.06 21 3 13.94 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.18.18 2.34.54 3.42a1 1 0 0 1-.24 1z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>727 870 160</span>
+                                </a>
+                                <a href="mailto:perfektautoservis@seznam.cz" class="info-link mail-link">
+                                    <span class="link-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2v.01L12 13l8-4.99V8H4zm16 8V10.3l-7.47 4.67a1 1 0 0 1-1.06 0L4 10.3V16h16z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>perfektautoservis@seznam.cz</span>
+                                </a>
+                                <div class="item contact-meta">
+                                    <div class="info-link static-contact">
+                                        <span class="link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" focusable="false">
+                                                <path d="M12 2a7 7 0 0 1 7 7c0 4.72-5.13 10.72-6.1 11.82a1.18 1.18 0 0 1-1.8 0C10.13 19.72 5 13.72 5 9a7 7 0 0 1 7-7zm0 9.5A2.5 2.5 0 1 0 12 6.5a2.5 2.5 0 0 0 0 5z" fill="currentColor"/>
+                                            </svg>
+                                        </span>
+                                        <span>Zbuzany 1062,<br>Rychnov nad Kněžnou</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social-links" aria-label="Social links">
+                                <a href="https://www.facebook.com/" class="social-link" target="_blank" rel="noreferrer noopener">
+                                    <span class="link-icon social-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.87.24-1.46 1.5-1.46H16.7V5a23.4 23.4 0 0 0-2.46-.13c-2.43 0-4.1 1.48-4.1 4.2V11H7.4v3h2.74v8h3.36z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="https://www.tiktok.com/" class="social-link" target="_blank" rel="noreferrer noopener">
+                                    <span class="link-icon social-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M14.97 3c.35 2 1.54 3.57 3.45 4.24v2.57a7.1 7.1 0 0 1-3.35-1v5.24a5.06 5.06 0 1 1-5.06-5.06c.28 0 .55.02.82.07v2.62a2.6 2.6 0 0 0-.82-.13 2.5 2.5 0 1 0 2.5 2.5V3h2.46z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>TikTok</span>
+                                </a>
+                            </div>
+                            <p class="hours-caption social-caption" data-key="social_note">Ми також у соцмережах</p>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="info-footer info-footer-main reveal-item" style="--delay: 0.24s;">
+
+                    <div class="map-container floating-panel">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.0909529614664!2d16.273932999999985!3d50.15433220000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ddf9792c73155%3A0x359096442a95df8b!2sPERFEKT%20AUTO%20%26%20SERVIS%20%26%20PNEU!5e0!3m2!1sen!2scz!4v1775218869286!5m2!1sen!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+        <section id="info-contact" class="content-section dark-section mobile-info-section">
+            <div class="container section-shell reveal">
+                <div class="section-intro">
+                    <p class="section-kicker" data-key="info_kicker">Усе потрібне в одному місці</p>
+                    <h2 data-key="nav_contact">Контакти</h2>
+                </div>
+                <div class="info-layout mobile-info-layout">
+                    <div class="info-stack mobile-info-stack">
+                        <div class="info-panel info-panel-contact reveal-item" style="--delay: 0s;">
+                            <h3 data-key="nav_contact">Контакти</h3>
+                            <div class="contact-links">
+                                <a href="tel:+420725311160" class="info-link tel-link">
+                                    <span class="link-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.08.36 2.24.54 3.42.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.06 21 3 13.94 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.18.18 2.34.54 3.42a1 1 0 0 1-.24 1z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>725 311 160</span>
+                                </a>
+                                <a href="tel:+420727870160" class="info-link tel-link">
+                                    <span class="link-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.08.36 2.24.54 3.42.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.06 21 3 13.94 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.18.18 2.34.54 3.42a1 1 0 0 1-.24 1z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>727 870 160</span>
+                                </a>
+                                <a href="mailto:perfektautoservis@seznam.cz" class="info-link mail-link">
+                                    <span class="link-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2v.01L12 13l8-4.99V8H4zm16 8V10.3l-7.47 4.67a1 1 0 0 1-1.06 0L4 10.3V16h16z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>perfektautoservis@seznam.cz</span>
+                                </a>
+                                <div class="item contact-meta">
+                                    <div class="info-link static-contact">
+                                        <span class="link-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" focusable="false">
+                                                <path d="M12 2a7 7 0 0 1 7 7c0 4.72-5.13 10.72-6.1 11.82a1.18 1.18 0 0 1-1.8 0C10.13 19.72 5 13.72 5 9a7 7 0 0 1 7-7zm0 9.5A2.5 2.5 0 1 0 12 6.5a2.5 2.5 0 0 0 0 5z" fill="currentColor"/>
+                                            </svg>
+                                        </span>
+                                        <span>Zbuzany 1062,<br>Rychnov nad Kněžnou</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="social-links" aria-label="Social links">
+                                <a href="https://www.facebook.com/" class="social-link" target="_blank" rel="noreferrer noopener">
+                                    <span class="link-icon social-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.87.24-1.46 1.5-1.46H16.7V5a23.4 23.4 0 0 0-2.46-.13c-2.43 0-4.1 1.48-4.1 4.2V11H7.4v3h2.74v8h3.36z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="https://www.tiktok.com/" class="social-link" target="_blank" rel="noreferrer noopener">
+                                    <span class="link-icon social-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" focusable="false">
+                                            <path d="M14.97 3c.35 2 1.54 3.57 3.45 4.24v2.57a7.1 7.1 0 0 1-3.35-1v5.24a5.06 5.06 0 1 1-5.06-5.06c.28 0 .55.02.82.07v2.62a2.6 2.6 0 0 0-.82-.13 2.5 2.5 0 1 0 2.5 2.5V3h2.46z" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                    <span>TikTok</span>
+                                </a>
+                            </div>
+                            <p class="hours-caption social-caption" data-key="social_note">Ми також у соцмережах</p>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="info-footer reveal-item" style="--delay: 0.08s;">
+                    <div class="map-container floating-panel">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.0909529614664!2d16.273932999999985!3d50.15433220000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470ddf9792c73155%3A0x359096442a95df8b!2sPERFEKT%20AUTO%20%26%20SERVIS%20%26%20PNEU!5e0!3m2!1sen!2scz!4v1775218869286!5m2!1sen!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 
