@@ -31,7 +31,10 @@
                 serv_2_title: "Фургони", serv_2_desc: "До вантажопідйомності 5.5т",
                 serv_3_title: "Причепи", serv_3_desc: "Ремонт та сервіс влеків",
                 hours_note: "Поза робочим часом — за домовленістю.",
-                social_note: "Ми також у соцмережах"
+                social_note: "Ми також у соцмережах",
+                gallery_kicker: "Наші роботи",
+                gallery_title: "Галерея сервісу",
+                nav_gallery: "Галерея"
             },
             cs: {
                 nav_home: "Domů", nav_about: "O nás", nav_why: "Proč my", nav_reviews: "Recenze", nav_info: "Info", nav_services: "Služby",
@@ -65,7 +68,10 @@
                 serv_2_title: "Dodávky", serv_2_desc: "Servis vozů do 5.5t",
                 serv_3_title: "Vleky", serv_3_desc: "Opravy a servis přívěsů",
                 hours_note: "Mimo pracovní dobu dle tel. domluvy.",
-                social_note: "Najdete nás i na sociálních sítích"
+                social_note: "Najdete nás i na sociálních sítích",
+                gallery_kicker: "Naše práce",
+                gallery_title: "Galerie servisu",
+                nav_gallery: "Galerie"
             },
             en: {
                 nav_home: "Home", nav_about: "About", nav_why: "Why us", nav_reviews: "Reviews", nav_info: "Info", nav_services: "Services",
@@ -99,7 +105,10 @@
                 serv_2_title: "Vans", serv_2_desc: "Up to 5.5t capacity",
                 serv_3_title: "Trailers", serv_3_desc: "Repairs and trailer service",
                 hours_note: "After hours by phone appointment.",
-                social_note: "You can also find us on social media"
+                social_note: "You can also find us on social media",
+                gallery_kicker: "Our works",
+                gallery_title: "Service Gallery",
+                nav_gallery: "Gallery"
             }
         };
 
@@ -501,4 +510,93 @@
             img.src = 'images/background.jpg';
             img.onload = hideLoadingScreen;
             img.onerror = hideLoadingScreen;
+        });
+
+        // --- ГАЛЕРЕЯ ТА LIGHTBOX ---
+
+        let currentImgIdx = 1;
+        const totalImages = 6; // Кількість ваших фото
+
+        function initAutoGallery() {
+            const galleryGrid = document.getElementById('gallery-grid');
+            if (!galleryGrid) return;
+
+            galleryGrid.innerHTML = ''; // Очищення перед рендером
+
+            for (let i = 1; i <= totalImages; i++) {
+                const item = document.createElement('div');
+                item.className = 'gallery-item reveal-item';
+                // Використовуємо внутрішню функцію, щоб уникнути проблем з onclick
+                const img = document.createElement('img');
+                img.src = `images/gallery/${i}.jpg`;
+                img.alt = `Work ${i}`;
+                img.addEventListener('click', () => openLightbox(i));
+                
+                item.appendChild(img);
+                galleryGrid.appendChild(item);
+            }
+            
+            // Перезапуск анімації появи для нових елементів
+            if (typeof setupRevealAnimations === 'function') setupRevealAnimations();
+        }
+
+        function openLightbox(index) {
+            currentImgIdx = index;
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox) {
+                lightbox.style.display = 'flex';
+                updateLightboxImg();
+            }
+        }
+
+        function updateLightboxImg() {
+            const lbImg = document.getElementById('lightbox-img');
+            if (lbImg) lbImg.src = `images/gallery/${currentImgIdx}.冷静.jpg`.replace('.冷静', ''); 
+            // Вище виправлено шлях:
+            lbImg.src = `images/gallery/${currentImgIdx}.jpg`;
+        }
+
+        // Призначаємо події кнопкам тільки після того, як DOM готовий
+        function setupLightboxControls() {
+            const lb = document.getElementById('lightbox');
+            if (!lb) return;
+
+            const closeBtn = lb.querySelector('.lightbox-close');
+            const nextBtn = lb.querySelector('.lightbox-next');
+            const prevBtn = lb.querySelector('.lightbox-prev');
+
+            if (nextBtn) nextBtn.onclick = (e) => {
+                e.stopPropagation();
+                currentImgIdx = currentImgIdx >= totalImages ? 1 : currentImgIdx + 1;
+                updateLightboxImg();
+            };
+
+            if (prevBtn) prevBtn.onclick = (e) => {
+                e.stopPropagation();
+                currentImgIdx = currentImgIdx <= 1 ? totalImages : currentImgIdx - 1;
+                updateLightboxImg();
+            };
+
+            if (closeBtn) closeBtn.onclick = () => lb.style.display = 'none';
+            
+            lb.onclick = (e) => {
+                if (e.target.id === 'lightbox') lb.style.display = 'none';
+            };
+        }
+
+        // Обробка клавіатури
+        document.addEventListener('keydown', (e) => {
+            const lb = document.getElementById('lightbox');
+            if (lb && lb.style.display === 'flex') {
+                if (e.key === "ArrowRight") currentImgIdx = currentImgIdx >= totalImages ? 1 : currentImgIdx + 1;
+                if (e.key === "ArrowLeft") currentImgIdx = currentImgIdx <= 1 ? totalImages : currentImgIdx - 1;
+                if (e.key === "Escape") lb.style.display = 'none';
+                updateLightboxImg();
+            }
+        });
+
+        // Запуск всього разом
+        document.addEventListener('DOMContentLoaded', () => {
+            initAutoGallery();
+            setupLightboxControls();
         });

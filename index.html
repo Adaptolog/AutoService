@@ -20,6 +20,7 @@
         <nav class="nav-links" id="siteNav">
             <a href="#hero" data-key="nav_home">Головна</a>
             <a href="#about" data-key="nav_about">Про нас</a>
+            <a href="#gallery" data-key="nav_gallery">Галерея</a>
             <a href="#why-us" data-key="nav_why">Чому ми</a>
             <a href="#reviews" data-key="nav_reviews">Відгуки</a>
             <a href="#info" data-key="nav_info">Інфо</a>
@@ -66,6 +67,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="content-section">
+            <div class="container section-shell reveal">
+                <div class="section-intro">
+                    <p data-key="gallery_kicker" class="section-kicker">Наші роботи</p>
+                    <h2 data-key="gallery_title">Галерея сервісу</h2>
+                </div>
+                
+                <div id="gallery-grid" class="gallery-grid"></div>
             </div>
         </section>
 
@@ -306,6 +318,11 @@
     </main>
 
     <script src="script.js"></script>
-
+    <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <span class="lightbox-next">&#10095;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    </div>
 </body>
 </html>
